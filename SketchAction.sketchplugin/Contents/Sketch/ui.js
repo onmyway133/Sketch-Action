@@ -1,9 +1,13 @@
 @import 'helper.js'
 
+var width = 1000
+var height = 400
+var topHeight = 50
+
 var ui = {
   makeModalWindow: function() {
     var window = NSWindow.alloc().initWithContentRect_styleMask_backing_defer_(
-      NSMakeRect(0, 0, 1365, 500), NSTitledWindowMask, NSBackingStoreBuffered, false)
+      NSMakeRect(0, 0, width, height), NSTitledWindowMask, NSBackingStoreBuffered, false)
     window.backgroundColor = NSColor.grayColor()
 
     return window
@@ -14,12 +18,7 @@ var ui = {
     var topView = this.makeTopView(context)
 
     view.addSubview(topView)
-    topView.translatesAutoresizingMaskIntoConstraints = false
-
-    topView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
-    topView.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
-    topView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-    topView.heightAnchor.constraintEqualToConstant(40.0).active = true
+    topView.frame = NSMakeRect(0, height - topHeight, width, topHeight)
 
     return view
   },
@@ -27,11 +26,11 @@ var ui = {
   makeTextField: function() {
     var textField = NSTextField.alloc().init()
     textField.editable = true
-    textField.setFont(NSFont.systemFontOfSize(32))
+    textField.setFont(NSFont.systemFontOfSize(28))
     textField.textColor = NSColor.blackColor()
-    textField.frame = NSMakeRect(10, 10, 1365, 115)
     textField.stringValue = "hello world"
     textField.cell().setPlaceholderString("Search")
+    textField.bezeled = false
 
     return textField
   },
@@ -57,18 +56,8 @@ var ui = {
     view.addSubview(textField)
     view.addSubview(imageView)
 
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-
-    imageView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
-    imageView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-    imageView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
-    imageView.widthAnchor.constraintEqualToConstant(40.0).active = true
-
-    textField.leftAnchor.constraintEqualToAnchor(imageView.rightAnchor).active = true
-    textField.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
-    textField.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-    textField.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
+    imageView.frame = NSMakeRect(5, topHeight - 39, 26, 26)
+    textField.frame = NSMakeRect(40, topHeight - 45, width - 55, 40)
 
     return view
   }
