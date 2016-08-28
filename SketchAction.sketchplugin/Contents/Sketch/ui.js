@@ -31,6 +31,11 @@ var ui = {
     textField.stringValue = "hello world"
     textField.cell().setPlaceholderString("Search")
     textField.bezeled = false
+    textField.drawsBackground = false
+    textField.bordered = false
+    textField.cell.usesSingleLineMode = true
+    textField.cell.wraps = true
+    textField.cell.focusRingType = NSFocusRingTypeNone
 
     return textField
   },
