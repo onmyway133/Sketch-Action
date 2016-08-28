@@ -1,0 +1,17 @@
+{
+    "name" : "Sketch Action",
+    "identifier" : "com.fantageek.sketch.SketchAction",
+    "version" : "1.0",
+    "description" : "Sketch in action",
+    "authorEmail" : "onmyway133@gmail.com",
+    "author" : "Khoa Pham",
+    "commands" : [
+    {
+      "script" : "main.js",
+      "handler" : "onRun",
+      "shortcut" : "cmd ctrl o",
+      "name" : "Open",
+      "identifier" : "sketch-action"
+    }
+  ]
+}
