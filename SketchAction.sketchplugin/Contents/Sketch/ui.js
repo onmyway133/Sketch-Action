@@ -18,9 +18,6 @@ var manager = {
   items: ["one", "two", "three"],
 
   setup: function() {
-    this.delegate = this.delegateClass.getClassInstance()
-    this.dataSource = this.dataSourceClass.getClassInstance()
-
     this.dataSourceClass.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
       log("hello")
       return 10
@@ -30,6 +27,9 @@ var manager = {
       log("world")
       return "hello"
     })
+
+    this.delegate = this.delegateClass.getClassInstance()
+    this.dataSource = this.dataSourceClass.getClassInstance()
   }
 }
 
