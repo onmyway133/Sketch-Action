@@ -9,7 +9,6 @@ function onRun(context) {
 
   // modalWindow
   var modalWindow = ui.makeModalWindow()
-
   modalWindow.contentView = containerView
 
   // run

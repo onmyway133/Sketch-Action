@@ -9,8 +9,17 @@ var ui = {
     return window
   },
 
-  makeContainerView: function() {
+  makeContainerView: function(context) {
     var view = NSView.alloc().init()
+    var topView = this.makeTopView(context)
+
+    view.addSubview(topView)
+    topView.translatesAutoresizingMaskIntoConstraints = false
+
+    topView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
+    topView.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
+    topView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
+    topView.heightAnchor.constraintEqualToConstant(40.0).active = true
 
     return view
   },
@@ -45,11 +54,21 @@ var ui = {
     var textField = this.makeTextField()
     var imageView = this.makeSearchImageView(context.plugin)
 
+    view.addSubview(textField)
+    view.addSubview(imageView)
+
     textField.translatesAutoresizingMaskIntoConstraints = false
     imageView.translatesAutoresizingMaskIntoConstraints = false
 
-    view.addSubview(textField)
-    view.addSubview(imageView)
+    imageView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
+    imageView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
+    imageView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
+    imageView.widthAnchor.constraintEqualToConstant(40.0).active = true
+
+    textField.leftAnchor.constraintEqualToAnchor(imageView.rightAnchor).active = true
+    textField.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
+    textField.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
+    textField.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
 
     return view
   }
