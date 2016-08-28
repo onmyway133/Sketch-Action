@@ -1,7 +1,7 @@
 @import 'helper.js'
 
 var config = {
-  width: 1000,
+  width: 680,
   height: 400,
   topHeight: 50,
   backgroundColor: NSColor.colorWithCalibratedRed_green_blue_alpha(231/255, 232/255, 232/255, 1.0)
@@ -21,11 +21,11 @@ var ui = {
     var topView = this.makeTopView(context)
     var tableViewContainer = this.makeTableView()
 
-    view.addSubview(topView)
     view.addSubview(tableViewContainer)
+    view.addSubview(topView)
 
     topView.frame = NSMakeRect(0, config.height - config.topHeight, config.width, config.topHeight)
-    
+
     return view
   },
 
@@ -55,8 +55,7 @@ var ui = {
   },
 
   makeTableView: function() {
-    var rect = NSMakeRect(0, config.height - config.topHeight * 2,
-                                          config.width, config.height - config.topHeight * 2)
+    var rect = NSMakeRect(0, 0, config.width, config.height - config.topHeight)
     var container = NSScrollView.alloc().init()
     container.frame = rect
 
@@ -67,11 +66,14 @@ var ui = {
     column.width = config.width
 
     tableView.addTableColumn(column)
+    tableView.headerView = null
 
     container.documentView = tableView
     container.hasVerticalScroller = true
 
-    return tableView
+    container.backgroundColor = NSColor.redColor()
+
+    return container
   },
 
   makeTopView: function(context) {
