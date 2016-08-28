@@ -11,16 +11,23 @@ var config = {
 }
 
 var manager = {
-  delegate: new MochaJSDelegate(),
-  dataSource: new MochaJSDelegate(),
+  delegateClass: new MochaJSDelegate(),
+  delegate: null,
+  dataSourceClass: new MochaJSDelegate(),
+  dataSource: null,
   items: ["one", "two", "three"],
 
   setup: function() {
-    this.dataSource.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
+    this.delegate = this.delegateClass.getClassInstance()
+    this.dataSource = this.dataSourceClass.getClassInstance()
+
+    this.dataSourceClass.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
+      log("hello")
       return 10
     })
 
-    this.dataSource.setHandlerForSelector("tableView:objectValueForTableColumn:row:", function(tableView, column, row) {
+    this.dataSourceClass.setHandlerForSelector("tableView:objectValueForTableColumn:row:", function(tableView, column, row) {
+      log("world")
       return "hello"
     })
   }
@@ -88,8 +95,8 @@ var ui = {
     tableView.headerView = null
 
     manager.setup()
-    tableView.dataSource = manager.dataSource.getClassInstance()
-    tableView.delegate = manager.delegate.getClassInstance()
+    tableView.dataSource = manager.dataSource
+    tableView.delegate = manager.delegate
 
     container.documentView = tableView
     container.hasVerticalScroller = true
