@@ -1,6 +1,8 @@
 @import 'helper.js'
 @import 'MochaJSDelegate.js'
 
+COScript.currentCOScript().setShouldKeepAround_(true)
+
 var config = {
   width: 680,
   height: 400,
