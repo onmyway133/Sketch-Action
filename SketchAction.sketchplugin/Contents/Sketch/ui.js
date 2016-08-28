@@ -1,10 +1,27 @@
 @import 'helper.js'
+@import 'MochaJSDelegate.js'
 
 var config = {
   width: 680,
   height: 400,
   topHeight: 50,
   backgroundColor: NSColor.colorWithCalibratedRed_green_blue_alpha(231/255, 232/255, 232/255, 1.0)
+}
+
+var manager = {
+  delegate: new MochaJSDelegate(),
+  datasource: new MochaJSDelegate(),
+  items: ["one", "two", "three"],
+
+  setup: function() {
+    this.datasource.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
+      return this.items.length
+    })
+
+    this.datasource.setHandlerForSelector("tableView:objectValueForTableColumn:row:", function(tableView, column, row) {
+      return "hello"
+    })
+  }
 }
 
 var ui = {
@@ -67,6 +84,9 @@ var ui = {
 
     tableView.addTableColumn(column)
     tableView.headerView = null
+
+    tableView.datasource = manager.datasource.getClassInstance()
+    tableView.delegate = manager.delegate.getClassInstance()
 
     container.documentView = tableView
     container.hasVerticalScroller = true
