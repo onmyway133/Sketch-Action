@@ -12,15 +12,15 @@ var config = {
 
 var manager = {
   delegate: new MochaJSDelegate(),
-  datasource: new MochaJSDelegate(),
+  dataSource: new MochaJSDelegate(),
   items: ["one", "two", "three"],
 
   setup: function() {
-    this.datasource.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
-      return this.items.length
+    this.dataSource.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
+      return 10
     })
 
-    this.datasource.setHandlerForSelector("tableView:objectValueForTableColumn:row:", function(tableView, column, row) {
+    this.dataSource.setHandlerForSelector("tableView:objectValueForTableColumn:row:", function(tableView, column, row) {
       return "hello"
     })
   }
@@ -88,7 +88,7 @@ var ui = {
     tableView.headerView = null
 
     manager.setup()
-    tableView.datasource = manager.datasource.getClassInstance()
+    tableView.dataSource = manager.dataSource.getClassInstance()
     tableView.delegate = manager.delegate.getClassInstance()
 
     container.documentView = tableView
