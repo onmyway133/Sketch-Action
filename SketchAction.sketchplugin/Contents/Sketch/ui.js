@@ -16,8 +16,11 @@ var ui = {
   makeContainerView: function(context) {
     var view = NSView.alloc().init()
     var topView = this.makeTopView(context)
+    var tableViewContainer = this.makeTableView()
 
     view.addSubview(topView)
+    view.addSubview(tableViewContainer)
+
     topView.frame = NSMakeRect(0, height - topHeight, width, topHeight)
 
     return view
@@ -49,7 +52,23 @@ var ui = {
   },
 
   makeTableView: function() {
+    var rect = NSMakeRect(0, height - topHeight - topHeight,
+                                          width, height - topHeight - topHeight)
+    var container = NSScrollView.alloc().init()
+    container.frame = rect
 
+    var tableView = NSTableView.alloc().init()
+    tableView.frame = rect
+
+    var column = NSTableColumn.alloc().initWithIdentifier("")
+    column.width = width
+
+    tableView.addTableColumn(column)
+
+    container.documentView = tableView
+    container.hasVerticalScroller = true
+
+    return tableView
   },
 
   makeTopView: function(context) {
