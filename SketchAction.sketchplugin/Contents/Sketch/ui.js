@@ -1,14 +1,17 @@
 @import 'helper.js'
 
-var width = 1000
-var height = 400
-var topHeight = 50
+var config = {
+  width: 1000,
+  height: 400,
+  topHeight: 50,
+  backgroundColor: NSColor.colorWithCalibratedRed_green_blue_alpha(231/255, 232/255, 232/255, 1.0)
+}
 
 var ui = {
   makeModalWindow: function() {
     var window = NSWindow.alloc().initWithContentRect_styleMask_backing_defer_(
-      NSMakeRect(0, 0, width, height), NSTitledWindowMask, NSBackingStoreBuffered, false)
-    window.backgroundColor = NSColor.grayColor()
+      NSMakeRect(0, 0, config.width, config.height), NSTitledWindowMask, NSBackingStoreBuffered, false)
+    window.backgroundColor = config.backgroundColor
 
     return window
   },
@@ -21,8 +24,8 @@ var ui = {
     view.addSubview(topView)
     view.addSubview(tableViewContainer)
 
-    topView.frame = NSMakeRect(0, height - topHeight, width, topHeight)
-
+    topView.frame = NSMakeRect(0, config.height - config.topHeight, config.width, config.topHeight)
+    
     return view
   },
 
@@ -52,8 +55,8 @@ var ui = {
   },
 
   makeTableView: function() {
-    var rect = NSMakeRect(0, height - topHeight - topHeight,
-                                          width, height - topHeight - topHeight)
+    var rect = NSMakeRect(0, config.height - config.topHeight * 2,
+                                          config.width, config.height - config.topHeight * 2)
     var container = NSScrollView.alloc().init()
     container.frame = rect
 
@@ -61,7 +64,7 @@ var ui = {
     tableView.frame = rect
 
     var column = NSTableColumn.alloc().initWithIdentifier("")
-    column.width = width
+    column.width = config.width
 
     tableView.addTableColumn(column)
 
@@ -80,8 +83,8 @@ var ui = {
     view.addSubview(textField)
     view.addSubview(imageView)
 
-    imageView.frame = NSMakeRect(5, topHeight - 39, 26, 26)
-    textField.frame = NSMakeRect(40, topHeight - 45, width - 55, 40)
+    imageView.frame = NSMakeRect(5, config.topHeight - 39, 26, 26)
+    textField.frame = NSMakeRect(40, config.topHeight - 45, config.width - 55, 40)
 
     return view
   }
