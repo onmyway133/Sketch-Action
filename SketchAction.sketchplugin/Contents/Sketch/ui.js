@@ -85,6 +85,7 @@ var ui = {
     tableView.addTableColumn(column)
     tableView.headerView = null
 
+    manager.setup()
     tableView.datasource = manager.datasource.getClassInstance()
     tableView.delegate = manager.delegate.getClassInstance()
 
