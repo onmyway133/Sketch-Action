@@ -13,4 +13,6 @@ function onRun(context) {
 
   // run
   NSApplication.sharedApplication().runModalForWindow_(modalWindow)
+
+  ui.tableView.reloadData()
 }
