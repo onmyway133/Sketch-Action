@@ -28,6 +28,10 @@ var manager = {
       return "hello"
     })
 
+    this.delegateClass.setHandlerForSelector("tableView:didClickTableColumn:", function(tableView, column) {
+      log("did click column")
+    })
+
     this.delegate = this.delegateClass.getClassInstance()
     this.dataSource = this.dataSourceClass.getClassInstance()
   }
@@ -93,9 +97,11 @@ var ui = {
 
     var column = NSTableColumn.alloc().initWithIdentifier("")
     column.width = config.width
+    column.title = "alo"
+    column.headerCell.title = "ha ha"
 
     tableView.addTableColumn(column)
-    tableView.headerView = null
+    // tableView.headerView = null
 
     manager.setup()
     tableView.dataSource = manager.dataSource
