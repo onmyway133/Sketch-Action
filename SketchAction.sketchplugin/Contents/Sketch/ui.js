@@ -97,15 +97,14 @@ var ui = {
 
     var column = NSTableColumn.alloc().initWithIdentifier("")
     column.width = config.width
-    column.title = "alo"
-    column.headerCell.title = "ha ha"
 
     tableView.addTableColumn(column)
     // tableView.headerView = null
 
     manager.setup()
-    tableView.dataSource = manager.dataSource
-    tableView.delegate = manager.delegate
+
+    tableView.setDataSource_(manager.dataSource)
+    tableView.setDelegate_(manager.delegate)
 
     container.documentView = tableView
     container.hasVerticalScroller = true
