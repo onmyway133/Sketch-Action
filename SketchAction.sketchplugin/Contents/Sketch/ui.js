@@ -20,18 +20,21 @@ var manager = {
   setup: function() {
     this.dataSourceClass.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
       log("numberOfRowsInTableView")
-      return 2
+      return 10
     })
 
     this.dataSourceClass.setHandlerForSelector("tableView:objectValueForTableColumn:row:", function(tableView, column, row) {
       log("objectValueForTableColumn")
-      log(column)
-      log(row)
       return "hello"
     })
 
     this.delegateClass.setHandlerForSelector("tableView:didClickTableColumn:", function(tableView, column) {
       log("didClickTableColumn")
+    })
+
+    this.delegateClass.setHandlerForSelector("tableView:rowViewForRow:", function(tableView, row) {
+      log("didClickTableColumn")
+      return NSTableRowView.alloc().init()
     })
 
     this.delegate = this.delegateClass.getClassInstance()
@@ -75,7 +78,7 @@ var ui = {
     textField.bordered = false
     textField.cell().usesSingleLineMode = true
     textField.cell().wraps = true
-    textField.cell().focusRingType = NSFocusRingTypeNone
+    textField.focusRingType = NSFocusRingTypeNone
 
     return textField
   },
@@ -101,6 +104,7 @@ var ui = {
     column.width = config.width
 
     tableView.addTableColumn(column)
+    tableView.focusRingType = NSFocusRingTypeNone
     // tableView.headerView = null
 
     manager.setup()
