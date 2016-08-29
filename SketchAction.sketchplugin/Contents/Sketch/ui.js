@@ -34,6 +34,8 @@ var manager = {
 }
 
 var ui = {
+  tableView: null,
+
   makeModalWindow: function() {
     var window = NSWindow.alloc().initWithContentRect_styleMask_backing_defer_(
       NSMakeRect(0, 0, config.width, config.height), NSTitledWindowMask, NSBackingStoreBuffered, false)
@@ -86,6 +88,7 @@ var ui = {
     container.frame = rect
 
     var tableView = NSTableView.alloc().init()
+    this.tableView = tableView
     tableView.frame = rect
 
     var column = NSTableColumn.alloc().initWithIdentifier("")
