@@ -19,17 +19,19 @@ var manager = {
 
   setup: function() {
     this.dataSourceClass.setHandlerForSelector("numberOfRowsInTableView:", function(tableView) {
-      log("hello")
-      return 10
+      log("numberOfRowsInTableView")
+      return 2
     })
 
     this.dataSourceClass.setHandlerForSelector("tableView:objectValueForTableColumn:row:", function(tableView, column, row) {
-      log("world")
+      log("objectValueForTableColumn")
+      log(column)
+      log(row)
       return "hello"
     })
 
     this.delegateClass.setHandlerForSelector("tableView:didClickTableColumn:", function(tableView, column) {
-      log("did click column")
+      log("didClickTableColumn")
     })
 
     this.delegate = this.delegateClass.getClassInstance()
