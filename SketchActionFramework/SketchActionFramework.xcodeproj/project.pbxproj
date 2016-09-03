@@ -8,16 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		D2FD6FC71D7B83AE00D01BFC /* SketchActionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FC61D7B83AE00D01BFC /* SketchActionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2FD6FD41D7B840000D01BFC /* Window.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD21D7B840000D01BFC /* Window.h */; };
-		D2FD6FD51D7B840000D01BFC /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD31D7B840000D01BFC /* Window.m */; };
+		D2FD6FD41D7B840000D01BFC /* FTGWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD21D7B840000D01BFC /* FTGWindow.h */; };
+		D2FD6FD51D7B840000D01BFC /* FTGWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD31D7B840000D01BFC /* FTGWindow.m */; };
+		D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */; };
+		D2FD6FDA1D7B8C8600D01BFC /* FTGManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2FD6FC31D7B83AE00D01BFC /* SketchActionFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SketchActionFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FD6FC61D7B83AE00D01BFC /* SketchActionFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SketchActionFramework.h; sourceTree = "<group>"; };
 		D2FD6FC81D7B83AE00D01BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2FD6FD21D7B840000D01BFC /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
-		D2FD6FD31D7B840000D01BFC /* Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
+		D2FD6FD21D7B840000D01BFC /* FTGWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGWindow.h; sourceTree = "<group>"; };
+		D2FD6FD31D7B840000D01BFC /* FTGWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGWindow.m; sourceTree = "<group>"; };
+		D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGManager.h; sourceTree = "<group>"; };
+		D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,8 +38,10 @@
 		D2FD6FB91D7B83AE00D01BFC = {
 			isa = PBXGroup;
 			children = (
-				D2FD6FD21D7B840000D01BFC /* Window.h */,
-				D2FD6FD31D7B840000D01BFC /* Window.m */,
+				D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */,
+				D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */,
+				D2FD6FD21D7B840000D01BFC /* FTGWindow.h */,
+				D2FD6FD31D7B840000D01BFC /* FTGWindow.m */,
 				D2FD6FC51D7B83AE00D01BFC /* SketchActionFramework */,
 				D2FD6FC41D7B83AE00D01BFC /* Products */,
 			);
@@ -65,7 +71,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FD6FD41D7B840000D01BFC /* Window.h in Headers */,
+				D2FD6FD41D7B840000D01BFC /* FTGWindow.h in Headers */,
+				D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */,
 				D2FD6FC71D7B83AE00D01BFC /* SketchActionFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,7 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FD6FD51D7B840000D01BFC /* Window.m in Sources */,
+				D2FD6FD51D7B840000D01BFC /* FTGWindow.m in Sources */,
+				D2FD6FDA1D7B8C8600D01BFC /* FTGManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

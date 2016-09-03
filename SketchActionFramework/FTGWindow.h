@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Window : NSWindow
+@interface FTGWindow : NSWindow
 
 @end
