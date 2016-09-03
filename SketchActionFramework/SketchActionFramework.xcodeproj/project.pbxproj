@@ -153,7 +153,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -r DerivedData/SketchActionFramework/Build/Products/Debug/SketchActionFramework.framework ../SketchAction.sketchplugin/Contents/Resources";
+			shellScript = "cp -r DerivedData/SketchActionFramework/Build/Intermediates/ArchiveIntermediates/SketchActionFramework/BuildProductsPath/Release/SketchActionFramework.framework ../SketchAction.sketchplugin/Contents/Resources";
 		};
 /* End PBXShellScriptBuildPhase section */
 
