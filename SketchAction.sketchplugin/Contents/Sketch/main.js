@@ -4,15 +4,16 @@ function onRun(context) {
   var window = context.document.window
   var plugin = context.plugin
 
-  // containerView
-  var containerView = ui.makeContainerView(context)
+  var path = context.plugin.url().absoluteString().stringByAppendingPathComponent("Contents/Resources")
+  log(path)
+  loadFramework(path)
+}
 
-  // modalWindow
-  var modalWindow = ui.makeModalWindow()
-  modalWindow.contentView = containerView
-
-  // run
-  NSApplication.sharedApplication().runModalForWindow_(modalWindow)
-
-  // ui.tableView.reloadData()
+function loadFramework(pluginRoot) {
+  if (NSClassFromString('Window') == null) {
+    var mocha = [Mocha sharedRuntime]
+    return [mocha loadFrameworkWithName: "SketchActionFramework" inDirectory: pluginRoot]
+  } else {
+    return true
+  }
 }

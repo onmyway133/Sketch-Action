@@ -25,6 +25,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+*.framework
 
 # CocoaPods
 Pods
