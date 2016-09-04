@@ -2,7 +2,7 @@ Sketch-Action
 ==
 Spotlight in Sketch
 
-![](Screenshots/SketchAction.gif)
+![](Screenshots/sketch-action.gif)
 
 ## Idea
 
