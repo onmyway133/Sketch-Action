@@ -10,4 +10,7 @@
 
 @interface FTGRow : NSTableRowView
 
+@property NSTextField *titleTextField;
+@property NSTextField *subtitleTextField;
+
 @end

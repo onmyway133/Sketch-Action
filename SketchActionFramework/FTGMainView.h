@@ -1,5 +1,5 @@
 //
-//  Window.h
+//  FTGMainView.h
 //  SketchActionFramework
 //
 //  Created by Khoa Pham on 04/09/16.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface FTGWindow : NSWindow
+@interface FTGMainView : NSView
 
 @end

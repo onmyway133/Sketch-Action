@@ -7,6 +7,7 @@
 //
 
 #import "FTGManager.h"
+#import "FTGConstants.h"
 
 @implementation FTGManager
 
