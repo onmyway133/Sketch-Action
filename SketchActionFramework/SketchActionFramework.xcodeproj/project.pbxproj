@@ -12,6 +12,7 @@
 		D2FD6FD51D7B840000D01BFC /* FTGWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD31D7B840000D01BFC /* FTGWindow.m */; };
 		D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */; };
 		D2FD6FDA1D7B8C8600D01BFC /* FTGManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */; };
+		D2FD6FDC1D7C19AD00D01BFC /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D2FD6FD31D7B840000D01BFC /* FTGWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGWindow.m; sourceTree = "<group>"; };
 		D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGManager.h; sourceTree = "<group>"; };
 		D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGManager.m; sourceTree = "<group>"; };
+		D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		D2FD6FB91D7B83AE00D01BFC = {
 			isa = PBXGroup;
 			children = (
+				D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */,
 				D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */,
 				D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */,
 				D2FD6FD21D7B840000D01BFC /* FTGWindow.h */,
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FD6FDC1D7C19AD00D01BFC /* search@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

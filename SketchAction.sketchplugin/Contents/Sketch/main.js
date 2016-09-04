@@ -24,9 +24,9 @@ function onRun(context) {
 
   var path = pluginPath(context)
   var result = loadFramework(path)
-
-  log(result)
-
   var manager = FTGManager.shared()
   manager.say()
+
+  var window = manager.window()
+  NSApplication.sharedApplication().runModalForWindow_(window)
 }

@@ -23,7 +23,8 @@
 - (instancetype)init {
   self = [super init];
 
-  self.window = [[FTGWindow alloc] init];
+  CGRect rect = NSMakeRect(0, 0, windowWidth, windowHeight);
+  self.window = [[FTGWindow alloc] initWithContentRect:rect styleMask:NSTitledWindowMask backing:NSBackingStoreBuffered defer:NO];
 
   return self;
 }
