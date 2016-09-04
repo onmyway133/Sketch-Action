@@ -38,7 +38,7 @@
   self.titleTextField.font = [NSFont systemFontOfSize:16 weight:NSFontWeightRegular];
 
   self.subtitleTextField = [self makeTextField];
-  self.subtitleTextField.font = [NSFont systemFontOfSize:14 weight:NSFontWeightLight];
+  self.subtitleTextField.font = [NSFont systemFontOfSize:13 weight:NSFontWeightLight];
 
   self.separatorView = [self makeSeparatorView];
 
