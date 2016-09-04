@@ -95,13 +95,13 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
 
       break;
     case FTGKeyRight:
-
+      [self.mainView handleKeyRight];
       break;
     case FTGKeyDown:
-
+      [self.mainView handleKeyDown];
       break;
     case FTGKeyUp:
-
+      [self.mainView handleKeyUp];
       break;
     default:
       break;

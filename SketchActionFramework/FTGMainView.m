@@ -155,12 +155,47 @@
     height += 3;
   }
 
-  CGRect rect = [NSApplication sharedApplication].modalWindow.frame;
+  CGRect rect = self.window.frame;
   CGFloat offset = height - rect.size.height;
 
   rect.size.height += offset;
   rect.origin.y -= offset;
-  [[NSApplication sharedApplication].modalWindow setFrame:rect display:YES];
+  [self.window setFrame:rect display:YES];
+}
+
+// MARK: - Key
+
+- (void)handleKeyDown {
+  if (self.items.count == 0) {
+    return;
+  }
+
+  [self.tableView.window becomeFirstResponder];
+  [self selectRow:self.tableView.selectedRow+1];
+}
+
+- (void)handleKeyUp {
+  if (self.items.count == 0) {
+    return;
+  }
+
+  [self selectRow:self.tableView.selectedRow-1];
+}
+
+- (void)handleKeyRight {
+  if (self.items.count == 0) {
+    return;
+  }
+}
+
+- (void)selectRow:(NSInteger)index {
+  if (index <0 || index >= self.items.count) {
+    return;
+  }
+
+  NSIndexSet *set = [NSIndexSet indexSetWithIndex:index];
+  [self.tableView selectRowIndexes:set byExtendingSelection:NO];
+  [self.tableView scrollRowToVisible:index];
 }
 
 // MARK: - Controls

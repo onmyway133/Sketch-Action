@@ -10,4 +10,8 @@
 
 @interface FTGMainView : NSView
 
+- (void)handleKeyDown;
+- (void)handleKeyUp;
+- (void)handleKeyRight;
+
 @end
