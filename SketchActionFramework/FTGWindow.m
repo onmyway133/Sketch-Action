@@ -9,7 +9,14 @@
 #import "FTGWindow.h"
 #import "FTGMainView.h"
 
-@interface FTGWindow () 
+typedef NS_ENUM(NSUInteger, FTGKey) {
+  FTGKeyLeft = 123,
+  FTGKeyRight = 124,
+  FTGKeyDown = 125,
+  FTGKeyUp = 126
+};
+
+@interface FTGWindow ()
 
 @property FTGMainView *mainView;
 
@@ -51,6 +58,14 @@
   [self setContentView:self.mainView];
 
   self.backgroundColor = [NSColor clearColor];
+
+  __weak FTGWindow *weakSelf = self;
+  [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyUpMask handler:^NSEvent * _Nullable(NSEvent * _Nonnull event) {
+    FTGWindow *strongSelf = weakSelf;
+    [strongSelf handleEvent:event];
+
+    return event;
+  }];
 }
 
 // MARK: - Controls
@@ -70,6 +85,27 @@
 - (void)cancelOperation:(id)sender {
   [self close];
   [[NSApplication sharedApplication] stopModal];
+}
+
+// MARK: - Event
+
+- (void)handleEvent:(NSEvent *)event {
+  switch (event.keyCode) {
+    case FTGKeyLeft:
+
+      break;
+    case FTGKeyRight:
+
+      break;
+    case FTGKeyDown:
+
+      break;
+    case FTGKeyUp:
+
+      break;
+    default:
+      break;
+  }
 }
 
 @end
