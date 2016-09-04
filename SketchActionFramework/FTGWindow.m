@@ -8,7 +8,7 @@
 
 #import "FTGWindow.h"
 
-@interface FTGWindow () <NSTableViewDataSource, NSTableViewDelegate>
+@interface FTGWindow () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
 @property NSView *containerView;
 @property NSTextField *textField;
@@ -91,6 +91,8 @@
   textField.font = [NSFont systemFontOfSize:14];
   textField.backgroundColor = [NSColor clearColor];
 
+  textField.delegate = self;
+
   return textField;
 }
 
@@ -135,16 +137,21 @@
   return scrollView;
 }
 
-// MARK: - Data source
+// MARK: - Table Data source
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
   return self.items.count;
 }
 
-// MARK: - Delegate
+// MARK: - Table Delegate
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
   return [[NSTableRowView alloc] init];
+}
+
+- (void)controlTextDidChange:(NSNotification *)notification {
+  NSTextField *textField = [notification object];
+  NSLog(@"controlTextDidChange: stringValue == %@", [textField stringValue]);
 }
 
 @end
