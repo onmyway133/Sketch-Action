@@ -29,6 +29,7 @@
 - (instancetype)init {
   self = [super init];
   [self setup];
+  [self loadData];
   return self;
 }
 
@@ -81,7 +82,10 @@
 
 - (void)loadWithMenuItem:(NSMenuItem *)item {
   FTGMenuItem *ftgItem = [[FTGMenuItem alloc] initWithMenuItem:item];
-  [self.items addObject:ftgItem];
+
+  if (item.title.length != 0) {
+    [self.items addObject:ftgItem];
+  }
 
   for (NSMenuItem *child in item.submenu.itemArray) {
     [self loadWithMenuItem:child];
@@ -135,6 +139,9 @@
   tableView.dataSource = self;
   tableView.delegate = self;
 
+  tableView.rowHeight = 46;
+  tableView.headerView = nil;
+
   return tableView;
 }
 
@@ -155,6 +162,16 @@
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
   FTGRowView *rowView = [[FTGRowView alloc] init];
+  FTGMenuItem *item = self.items[row];
+
+  CGRect frame = rowView.frame;
+  frame.size.width = tableView.frame.size.width;
+  rowView.frame = frame;
+
+  [rowView configureLayout];
+
+  rowView.titleTextField.stringValue = item.item.title;
+  rowView.subtitleTextField.stringValue = item.path;
 
   return rowView;
 }

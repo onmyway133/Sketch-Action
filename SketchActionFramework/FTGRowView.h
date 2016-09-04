@@ -13,4 +13,6 @@
 @property NSTextField *titleTextField;
 @property NSTextField *subtitleTextField;
 
+- (void)configureLayout;
+
 @end
