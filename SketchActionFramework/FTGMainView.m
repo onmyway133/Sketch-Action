@@ -19,6 +19,7 @@
 @property NSTableView *tableView;
 @property NSScrollView *scrollView;
 @property NSView *topView;
+@property NSView *separatorView;
 @property NSColor *myColor;
 
 @property NSMutableArray<FTGMenuItem *> *totalItems;
@@ -50,8 +51,10 @@
   self.tableView = [self makeTableView];
   self.scrollView = [self makeScrollView];
   self.topView = [self makeTopView];
+  self.separatorView = [self makeSeparatorView];
 
   self.topView.frame = NSMakeRect(0, 0, windowWidth, topHeight);
+  self.separatorView.frame = NSMakeRect(0, topHeight - 1, windowWidth, 1);
   self.scrollView.frame = NSMakeRect(0, topHeight, windowWidth, windowHeight - topHeight);
   self.tableView.tableColumns.firstObject.width = self.scrollView.frame.size.width;
 
@@ -67,6 +70,7 @@
 
   // Window content view
   [self addSubview:self.topView];
+  [self addSubview:self.separatorView];
   [self addSubview:self.scrollView];
 
   [self.textField becomeFirstResponder];
@@ -145,6 +149,7 @@
 
   tableView.rowHeight = 46;
   tableView.headerView = nil;
+  tableView.backgroundColor = self.myColor;
 
   return tableView;
 }
@@ -154,6 +159,15 @@
   scrollView.hasVerticalScroller = YES;
 
   return scrollView;
+}
+
+- (NSView *)makeSeparatorView {
+  NSView *view = [[NSView alloc] init];
+
+  view.wantsLayer = YES;
+  view.layer.backgroundColor = [[NSColor grayColor] colorWithAlphaComponent:0.4].CGColor;
+
+  return view;
 }
 
 // MARK: - Table Data source
