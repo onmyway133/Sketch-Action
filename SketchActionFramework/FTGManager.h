@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FTGWindow.h"
 
 @interface FTGManager : NSObject
 
-+ (instancetype)shared;
+@property FTGWindow *window;
 
++ (instancetype)shared;
 - (void)say;
 
 @end

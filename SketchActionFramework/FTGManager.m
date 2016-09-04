@@ -20,6 +20,14 @@
   return manager;
 }
 
+- (instancetype)init {
+  self = [super init];
+
+  self.window = [[FTGWindow alloc] init];
+
+  return self;
+}
+
 - (void)say {
   NSLog(@"hello world");
 }

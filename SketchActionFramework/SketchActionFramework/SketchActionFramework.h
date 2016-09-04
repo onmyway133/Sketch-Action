@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char SketchActionFrameworkVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <SketchActionFramework/PublicHeader.h>
 
 #import <SketchActionFramework/FTGManager.h>
+#import <SketchActionFramework/FTGWindow.h>
