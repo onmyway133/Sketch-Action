@@ -13,7 +13,8 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
   FTGKeyLeft = 123,
   FTGKeyRight = 124,
   FTGKeyDown = 125,
-  FTGKeyUp = 126
+  FTGKeyUp = 126,
+  FTGKeyEnter = 36
 };
 
 @interface FTGWindow ()
@@ -83,6 +84,10 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
 }
 
 - (void)cancelOperation:(id)sender {
+  [self closeAndStop];
+}
+
+- (void)closeAndStop {
   [self close];
   [[NSApplication sharedApplication] stopModal];
 }
@@ -100,8 +105,9 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
     case FTGKeyDown:
       [self.mainView handleKeyDown];
       break;
-    case FTGKeyUp:
-      
+    case FTGKeyEnter:
+      [self.mainView handleKeyEnter];
+      [self closeAndStop];
       break;
     default:
       break;

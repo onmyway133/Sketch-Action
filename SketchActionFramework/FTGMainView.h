@@ -13,5 +13,6 @@
 - (void)handleKeyDown;
 - (void)handleKeyLeft;
 - (void)handleKeyRight;
+- (void)handleKeyEnter;
 
 @end

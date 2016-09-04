@@ -11,6 +11,7 @@
 #import "FTGRowView.h"
 #import "FTGConstants.h"
 #import "NSString+Extensions.h"
+#import "FTGHandler.h"
 
 @interface FTGMainView () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
@@ -179,6 +180,13 @@
 
 - (void)handleKeyRight {
   [self makeTextFieldFirstResponder];
+}
+
+- (void)handleKeyEnter {
+  if (self.tableView.selectedRow >=0 && self.tableView.selectedRow < self.items.count) {
+    FTGMenuItem *item = self.items[self.tableView.selectedRow];
+    [FTGHandler handle:item];
+  }
 }
 
 - (void)makeTextFieldFirstResponder {
