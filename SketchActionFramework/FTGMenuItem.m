@@ -19,15 +19,20 @@
 }
 
 - (void)setup {
-  NSMutableArray *items = [NSMutableArray arrayWithObject:self.item.title.ftg_trimmed];
+  self.chain = [NSMutableArray arrayWithObject:self.item];
 
   NSMenuItem *parent = self.item.parentItem;
   while (parent != nil) {
-    [items addObject:parent.title.ftg_trimmed];
+    [self.chain addObject:parent];
     parent = parent.parentItem;
   }
 
-  self.path = [[items reverseObjectEnumerator].allObjects componentsJoinedByString:@" ➞ "];
+  NSMutableArray *items = [NSMutableArray array];
+  for (NSMenuItem *i in self.chain.reverseObjectEnumerator) {
+    [items addObject:i.title.ftg_trimmed];
+  }
+
+  self.path = [items componentsJoinedByString:@" ➞ "];
 }
 
 @end

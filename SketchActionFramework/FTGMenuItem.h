@@ -15,5 +15,6 @@
 
 @property NSString *path;
 @property NSMenuItem *item;
+@property NSMutableArray<NSMenuItem *> *chain;
 
 @end
