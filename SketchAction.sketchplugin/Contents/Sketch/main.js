@@ -1,17 +1,12 @@
 @import 'ui.js'
 
-function onRun(context) {
-  var window = context.document.window
-  var plugin = context.plugin
+function pluginPath(context) {
+	var basePath = NSString.stringWithFormat_(context.scriptPath)
+	.stringByDeletingLastPathComponent()
+	.stringByDeletingLastPathComponent()
+	.stringByDeletingLastPathComponent()
 
-  var path = context.plugin.url().absoluteString().stringByAppendingPathComponent("Contents/Resources/")
-  log(path)
-  var result = loadFramework(path)
-
-  log(result)
-
-  var manager = FTGManager.shared()
-  manager.say()
+	return basePath + "/Contents/Resources/";
 }
 
 function loadFramework(pluginRoot) {
@@ -21,4 +16,17 @@ function loadFramework(pluginRoot) {
   } else {
     return true
   }
+}
+
+function onRun(context) {
+  var window = context.document.window
+  var plugin = context.plugin
+
+  var path = pluginPath(context)
+  var result = loadFramework(path)
+
+  log(result)
+
+  var manager = FTGManager.shared()
+  manager.say()
 }
