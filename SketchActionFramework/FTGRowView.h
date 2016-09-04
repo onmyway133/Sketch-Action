@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface FTGRow : NSTableRowView
+@interface FTGRowView : NSTableRowView
 
 @property NSTextField *titleTextField;
 @property NSTextField *subtitleTextField;

@@ -6,9 +6,9 @@
 //  Copyright © 2016 Fantageek. All rights reserved.
 //
 
-#import "FTGRow.h"
+#import "FTGRowView.h"
 
-@implementation FTGRow
+@implementation FTGRowView
 
 - (BOOL)isFlipped {
   return YES;

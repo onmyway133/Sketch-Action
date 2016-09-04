@@ -8,7 +8,7 @@
 
 #import "FTGMainView.h"
 #import "FTGMenuItem.h"
-#import "FTGRow.h"
+#import "FTGRowView.h"
 #import "FTGConstants.h"
 
 @interface FTGMainView () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
@@ -154,7 +154,7 @@
 // MARK: - Table Delegate
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
-  FTGRow *rowView = [[FTGRow alloc] init];
+  FTGRowView *rowView = [[FTGRowView alloc] init];
 
   return rowView;
 }

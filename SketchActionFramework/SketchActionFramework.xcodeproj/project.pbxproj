@@ -15,8 +15,8 @@
 		D2FD6FDC1D7C19AD00D01BFC /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */; };
 		D2FD70321D7C56D600D01BFC /* FTGMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70301D7C56D600D01BFC /* FTGMenuItem.h */; };
 		D2FD70331D7C56D600D01BFC /* FTGMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70311D7C56D600D01BFC /* FTGMenuItem.m */; };
-		D2FD70361D7C58C600D01BFC /* FTGRow.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70341D7C58C600D01BFC /* FTGRow.h */; };
-		D2FD70371D7C58C600D01BFC /* FTGRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70351D7C58C600D01BFC /* FTGRow.m */; };
+		D2FD70361D7C58C600D01BFC /* FTGRowView.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70341D7C58C600D01BFC /* FTGRowView.h */; };
+		D2FD70371D7C58C600D01BFC /* FTGRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70351D7C58C600D01BFC /* FTGRowView.m */; };
 		D2FD703A1D7C5C5C00D01BFC /* FTGMainView.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70381D7C5C5C00D01BFC /* FTGMainView.h */; };
 		D2FD703B1D7C5C5C00D01BFC /* FTGMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70391D7C5C5C00D01BFC /* FTGMainView.m */; };
 		D2FD703D1D7C5D2100D01BFC /* FTGConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD703C1D7C5D2100D01BFC /* FTGConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,8 +33,8 @@
 		D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		D2FD70301D7C56D600D01BFC /* FTGMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGMenuItem.h; sourceTree = "<group>"; };
 		D2FD70311D7C56D600D01BFC /* FTGMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGMenuItem.m; sourceTree = "<group>"; };
-		D2FD70341D7C58C600D01BFC /* FTGRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGRow.h; sourceTree = "<group>"; };
-		D2FD70351D7C58C600D01BFC /* FTGRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGRow.m; sourceTree = "<group>"; };
+		D2FD70341D7C58C600D01BFC /* FTGRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGRowView.h; sourceTree = "<group>"; };
+		D2FD70351D7C58C600D01BFC /* FTGRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGRowView.m; sourceTree = "<group>"; };
 		D2FD70381D7C5C5C00D01BFC /* FTGMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGMainView.h; sourceTree = "<group>"; };
 		D2FD70391D7C5C5C00D01BFC /* FTGMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGMainView.m; sourceTree = "<group>"; };
 		D2FD703C1D7C5D2100D01BFC /* FTGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGConstants.h; sourceTree = "<group>"; };
@@ -57,8 +57,8 @@
 				D2FD703C1D7C5D2100D01BFC /* FTGConstants.h */,
 				D2FD70381D7C5C5C00D01BFC /* FTGMainView.h */,
 				D2FD70391D7C5C5C00D01BFC /* FTGMainView.m */,
-				D2FD70341D7C58C600D01BFC /* FTGRow.h */,
-				D2FD70351D7C58C600D01BFC /* FTGRow.m */,
+				D2FD70341D7C58C600D01BFC /* FTGRowView.h */,
+				D2FD70351D7C58C600D01BFC /* FTGRowView.m */,
 				D2FD70301D7C56D600D01BFC /* FTGMenuItem.h */,
 				D2FD70311D7C56D600D01BFC /* FTGMenuItem.m */,
 				D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */,
@@ -101,7 +101,7 @@
 				D2FD703A1D7C5C5C00D01BFC /* FTGMainView.h in Headers */,
 				D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */,
 				D2FD6FC71D7B83AE00D01BFC /* SketchActionFramework.h in Headers */,
-				D2FD70361D7C58C600D01BFC /* FTGRow.h in Headers */,
+				D2FD70361D7C58C600D01BFC /* FTGRowView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FD70371D7C58C600D01BFC /* FTGRow.m in Sources */,
+				D2FD70371D7C58C600D01BFC /* FTGRowView.m in Sources */,
 				D2FD703B1D7C5C5C00D01BFC /* FTGMainView.m in Sources */,
 				D2FD6FD51D7B840000D01BFC /* FTGWindow.m in Sources */,
 				D2FD70331D7C56D600D01BFC /* FTGMenuItem.m in Sources */,
