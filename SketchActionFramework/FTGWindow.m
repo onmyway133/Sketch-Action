@@ -35,12 +35,9 @@
 // MARK: - Setup
 
 - (void)setup {
-  self.myColor = [NSColor colorWithCalibratedRed:231/255 green:232/255 blue:232/255 alpha:1.0];
+  self.myColor = [NSColor colorWithCalibratedRed:231/255.0f green:232/255.0f blue:232/255.0f alpha:1.0f];
 
   self.backgroundColor = self.myColor;
-
-  self.containerView.wantsLayer = YES;
-  self.containerView.layer.backgroundColor = self.myColor.CGColor;
 
   // Controls
   self.containerView = [self makeContainerView];
@@ -59,7 +56,7 @@
   [self.topView addSubview:self.imageView];
 
   self.imageView.frame = NSMakeRect(5, topHeight - 39, 26, 26);
-  self.textField.frame = NSMakeRect(40, topHeight - 45, windowWidth - 55, 40);
+  self.textField.frame = NSMakeRect(40, topHeight - 50, windowWidth - 55, 40);
 
   // Table view
   self.scrollView.documentView = self.tableView;
@@ -88,7 +85,7 @@
   textField.cell.wraps = NO;
   textField.placeholderString = @"Search";
   textField.editable = YES;
-  textField.font = [NSFont systemFontOfSize:14];
+  textField.font = [NSFont systemFontOfSize:26];
   textField.backgroundColor = [NSColor clearColor];
 
   textField.delegate = self;
@@ -107,6 +104,9 @@
 
 - (NSView *)makeTopView {
   NSView *view = [[NSView alloc] init];
+
+  view.wantsLayer = YES;
+  view.layer.backgroundColor = self.myColor.CGColor;
 
   return view;
 }
