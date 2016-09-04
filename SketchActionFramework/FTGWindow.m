@@ -154,4 +154,15 @@
   NSLog(@"controlTextDidChange: stringValue == %@", [textField stringValue]);
 }
 
+// MARK: - Key
+
+- (void)keyDown:(NSEvent *)theEvent {
+  [super keyDown:theEvent];
+}
+
+- (void)cancelOperation:(id)sender {
+  [self close];
+  
+}
+
 @end
