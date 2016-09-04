@@ -18,7 +18,15 @@
 }
 
 - (void)setup {
-  self.path = @"File -> New -> Class";
+  NSMutableArray *items = [NSMutableArray arrayWithObject:self.item.title];
+
+  NSMenuItem *parent = self.item.parentItem;
+  while (parent != nil) {
+    [items addObject:parent.title];
+    parent = parent.parentItem;
+  }
+
+  self.path = [[items reverseObjectEnumerator].allObjects componentsJoinedByString:@" -> "];
 }
 
 @end

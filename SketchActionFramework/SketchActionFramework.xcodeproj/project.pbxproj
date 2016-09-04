@@ -20,6 +20,8 @@
 		D2FD703A1D7C5C5C00D01BFC /* FTGMainView.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70381D7C5C5C00D01BFC /* FTGMainView.h */; };
 		D2FD703B1D7C5C5C00D01BFC /* FTGMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70391D7C5C5C00D01BFC /* FTGMainView.m */; };
 		D2FD703D1D7C5D2100D01BFC /* FTGConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD703C1D7C5D2100D01BFC /* FTGConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2FD70441D7C64C400D01BFC /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70421D7C64C400D01BFC /* NSString+Extensions.h */; };
+		D2FD70451D7C64C400D01BFC /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70431D7C64C400D01BFC /* NSString+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		D2FD70381D7C5C5C00D01BFC /* FTGMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGMainView.h; sourceTree = "<group>"; };
 		D2FD70391D7C5C5C00D01BFC /* FTGMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGMainView.m; sourceTree = "<group>"; };
 		D2FD703C1D7C5D2100D01BFC /* FTGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGConstants.h; sourceTree = "<group>"; };
+		D2FD70421D7C64C400D01BFC /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		D2FD70431D7C64C400D01BFC /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		D2FD6FB91D7B83AE00D01BFC = {
 			isa = PBXGroup;
 			children = (
+				D2FD70421D7C64C400D01BFC /* NSString+Extensions.h */,
+				D2FD70431D7C64C400D01BFC /* NSString+Extensions.m */,
 				D2FD703C1D7C5D2100D01BFC /* FTGConstants.h */,
 				D2FD70381D7C5C5C00D01BFC /* FTGMainView.h */,
 				D2FD70391D7C5C5C00D01BFC /* FTGMainView.m */,
@@ -101,6 +107,7 @@
 				D2FD703A1D7C5C5C00D01BFC /* FTGMainView.h in Headers */,
 				D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */,
 				D2FD6FC71D7B83AE00D01BFC /* SketchActionFramework.h in Headers */,
+				D2FD70441D7C64C400D01BFC /* NSString+Extensions.h in Headers */,
 				D2FD70361D7C58C600D01BFC /* FTGRowView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +201,7 @@
 				D2FD70371D7C58C600D01BFC /* FTGRowView.m in Sources */,
 				D2FD703B1D7C5C5C00D01BFC /* FTGMainView.m in Sources */,
 				D2FD6FD51D7B840000D01BFC /* FTGWindow.m in Sources */,
+				D2FD70451D7C64C400D01BFC /* NSString+Extensions.m in Sources */,
 				D2FD70331D7C56D600D01BFC /* FTGMenuItem.m in Sources */,
 				D2FD6FDA1D7B8C8600D01BFC /* FTGManager.m in Sources */,
 			);

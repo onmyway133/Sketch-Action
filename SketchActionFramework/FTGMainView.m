@@ -10,6 +10,7 @@
 #import "FTGMenuItem.h"
 #import "FTGRowView.h"
 #import "FTGConstants.h"
+#import "NSString+Extensions.h"
 
 @interface FTGMainView () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
@@ -170,7 +171,7 @@
 
   [rowView configureLayout];
 
-  rowView.titleTextField.stringValue = item.item.title;
+  rowView.titleTextField.stringValue = [item.item.title ftg_trimmed];
   rowView.subtitleTextField.stringValue = item.path;
 
   return rowView;
