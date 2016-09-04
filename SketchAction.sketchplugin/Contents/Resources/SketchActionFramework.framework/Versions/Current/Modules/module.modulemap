@@ -1,0 +1,6 @@
+framework module SketchActionFramework {
+  umbrella header "SketchActionFramework.h"
+
+  export *
+  module * { export * }
+}
