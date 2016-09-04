@@ -92,7 +92,7 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
 - (void)handleEvent:(NSEvent *)event {
   switch (event.keyCode) {
     case FTGKeyLeft:
-
+      [self.mainView handleKeyLeft];
       break;
     case FTGKeyRight:
       [self.mainView handleKeyRight];
@@ -101,7 +101,7 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
       [self.mainView handleKeyDown];
       break;
     case FTGKeyUp:
-      [self.mainView handleKeyUp];
+      
       break;
     default:
       break;

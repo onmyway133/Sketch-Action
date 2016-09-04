@@ -30,4 +30,8 @@
   self.path = [[items reverseObjectEnumerator].allObjects componentsJoinedByString:@" ➞ "];
 }
 
+- (void)trigger {
+  
+}
+
 @end

@@ -24,6 +24,7 @@
 
 @property NSMutableArray<FTGMenuItem *> *totalItems;
 @property NSArray<FTGMenuItem *> *items;
+@property BOOL isTextFieldFirstResponder;
 
 @end
 
@@ -73,7 +74,7 @@
   [self addSubview:self.separatorView];
   [self addSubview:self.scrollView];
 
-  [self.textField becomeFirstResponder];
+  [self makeTextFieldFirstResponder];
 }
 
 // MARK: - Data
@@ -129,6 +130,11 @@
   return nil;
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
+  FTGMenuItem *item = self.items[self.tableView.selectedRow];
+  self.textField.stringValue = item.item.title.ftg_trimmed;
+}
+
 // MARK: - Textfield Delegate
 
 - (void)controlTextDidChange:(NSNotification *)notification {
@@ -166,25 +172,22 @@
 // MARK: - Key
 
 - (void)handleKeyDown {
-  if (self.items.count == 0) {
-    return;
-  }
-
-  [self.tableView.window becomeFirstResponder];
-  [self selectRow:self.tableView.selectedRow+1];
+  [self.tableView.window makeFirstResponder:self.tableView];
+  self.isTextFieldFirstResponder = NO;
 }
 
-- (void)handleKeyUp {
-  if (self.items.count == 0) {
-    return;
-  }
-
-  [self selectRow:self.tableView.selectedRow-1];
+- (void)handleKeyLeft {
+  [self makeTextFieldFirstResponder];
 }
 
 - (void)handleKeyRight {
-  if (self.items.count == 0) {
-    return;
+  [self makeTextFieldFirstResponder];
+}
+
+- (void)makeTextFieldFirstResponder {
+  if (!self.isTextFieldFirstResponder) {
+    self.isTextFieldFirstResponder = YES;
+    [self.textField becomeFirstResponder];
   }
 }
 

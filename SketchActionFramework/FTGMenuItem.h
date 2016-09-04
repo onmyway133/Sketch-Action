@@ -16,4 +16,6 @@
 @property NSString *path;
 @property NSMenuItem *item;
 
+- (void)trigger;
+
 @end
