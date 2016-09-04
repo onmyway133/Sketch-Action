@@ -184,6 +184,7 @@
 
   CGRect frame = rowView.frame;
   frame.size.width = tableView.frame.size.width;
+  frame.size.height = tableView.rowHeight;
   rowView.frame = frame;
 
   [rowView configureLayout];
