@@ -8,6 +8,7 @@
 
 #import "FTGWindow.h"
 #import "FTGMenuItem.h"
+#import "FTGRow.h"
 
 @interface FTGWindow () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
@@ -163,12 +164,19 @@
 // MARK: - Table Delegate
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
-  return [[NSTableRowView alloc] init];
+  FTGRow *rowView = [[FTGRow alloc] init];
+
+  return rowView;
 }
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+  return nil;
+}
+
+// MARK: - Textfield Delegate
 
 - (void)controlTextDidChange:(NSNotification *)notification {
   NSTextField *textField = [notification object];
-  NSLog(@"controlTextDidChange: stringValue == %@", [textField stringValue]);
 }
 
 // MARK: - Key
