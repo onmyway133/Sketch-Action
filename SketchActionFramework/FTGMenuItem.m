@@ -7,6 +7,7 @@
 //
 
 #import "FTGMenuItem.h"
+#import "NSString+Extensions.h"
 
 @implementation FTGMenuItem
 
@@ -18,15 +19,15 @@
 }
 
 - (void)setup {
-  NSMutableArray *items = [NSMutableArray arrayWithObject:self.item.title];
+  NSMutableArray *items = [NSMutableArray arrayWithObject:self.item.title.ftg_trimmed];
 
   NSMenuItem *parent = self.item.parentItem;
   while (parent != nil) {
-    [items addObject:parent.title];
+    [items addObject:parent.title.ftg_trimmed];
     parent = parent.parentItem;
   }
 
-  self.path = [[items reverseObjectEnumerator].allObjects componentsJoinedByString:@" -> "];
+  self.path = [[items reverseObjectEnumerator].allObjects componentsJoinedByString:@" ➞ "];
 }
 
 @end
