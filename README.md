@@ -1,5 +1,36 @@
 Sketch-Action
 ==
+Spotlight in Sketch
+
+![](Screenshots/SketchAction.gif)
+
+## Idea
+
+- Find and execute menu commands
+- Support many other custom actions
+
+## Usage
+
+- Open via `Command + Control + o`
+- Close via `Escape`
+- Navigate via `Down, Up, Left, Right` arrow keys
+
+## Install
+
+- Double click on `SketchAction.sketchplugin`
+- Reload Sketch
+
+## Build
+
+- Open SketchActionApp.xcodeproj
+- Select scheme `SketchActionFramework` scheme
+- Run `Product -> Build`
+- Run `Product -> Archive`
+
+## Debug
+
+- Open SketchActionApp.xcodeproj
+- Select scheme `SketchActionApp` scheme
 
 ## License
 
