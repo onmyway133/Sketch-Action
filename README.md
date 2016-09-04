@@ -6,8 +6,9 @@ Spotlight in Sketch
 
 ## Idea
 
-- Find and execute menu commands
-- Support many other custom actions
+- [x] Find menu commands
+- [ ] Execute menu commands
+- [ ] Support other custom actions
 
 ## Usage
 
