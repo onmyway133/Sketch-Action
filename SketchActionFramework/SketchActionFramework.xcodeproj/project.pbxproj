@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D2FD6FC71D7B83AE00D01BFC /* SketchActionFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FC61D7B83AE00D01BFC /* SketchActionFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2FD6FD41D7B840000D01BFC /* FTGWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD21D7B840000D01BFC /* FTGWindow.h */; };
+		D2FD6FD41D7B840000D01BFC /* FTGWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD21D7B840000D01BFC /* FTGWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2FD6FD51D7B840000D01BFC /* FTGWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD31D7B840000D01BFC /* FTGWindow.m */; };
-		D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */; };
+		D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2FD6FDA1D7B8C8600D01BFC /* FTGManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */; };
 		D2FD6FDC1D7C19AD00D01BFC /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */; };
 /* End PBXBuildFile section */

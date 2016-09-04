@@ -22,7 +22,7 @@
 			remoteGlobalIDString = D2FD6FC31D7B83AE00D01BFC;
 			remoteInfo = SketchActionFramework;
 		};
-		D2FD702A1D7C4FAF00D01BFC /* PBXContainerItemProxy */ = {
+		D2FD702E1D7C516E00D01BFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D2FD70241D7C4F8A00D01BFC /* SketchActionFramework.xcodeproj */;
 			proxyType = 1;
@@ -117,7 +117,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D2FD702B1D7C4FAF00D01BFC /* PBXTargetDependency */,
+				D2FD702F1D7C516E00D01BFC /* PBXTargetDependency */,
 			);
 			name = SketchActionApp;
 			productName = SketchActionApp;
@@ -198,10 +198,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D2FD702B1D7C4FAF00D01BFC /* PBXTargetDependency */ = {
+		D2FD702F1D7C516E00D01BFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SketchActionFramework;
-			targetProxy = D2FD702A1D7C4FAF00D01BFC /* PBXContainerItemProxy */;
+			targetProxy = D2FD702E1D7C516E00D01BFC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -303,7 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SketchActionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.sketch.SketchActionApp;
@@ -316,7 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SketchActionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.sketch.SketchActionApp;

@@ -15,6 +15,9 @@
   [super viewDidLoad];
 
   // Do any additional setup after loading the view.
+
+  FTGWindow *modalWindow = [[FTGManager shared] makeWindow];
+  [[NSApplication sharedApplication] runModalForWindow:modalWindow];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
