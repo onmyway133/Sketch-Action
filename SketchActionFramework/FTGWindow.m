@@ -49,7 +49,7 @@
 
   self.topView.frame = NSMakeRect(0, windowHeight - topHeight, windowWidth, topHeight);
   self.scrollView.frame = NSMakeRect(0, 0, windowWidth, windowHeight - topHeight);
-  self.tableView.tableColumns.firstObject.width = self.tableView.frame.size.width;
+  self.tableView.tableColumns.firstObject.width = self.scrollView.frame.size.width;
 
   // Top
   [self.topView addSubview:self.textField];
