@@ -100,6 +100,69 @@
   }
 }
 
+// MARK: - Table Data source
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+  return self.items.count;
+}
+
+// MARK: - Table Delegate
+
+- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
+  FTGRowView *rowView = [[FTGRowView alloc] init];
+  FTGMenuItem *item = self.items[row];
+
+  CGRect frame = rowView.frame;
+  frame.size.width = tableView.frame.size.width;
+  frame.size.height = tableView.rowHeight;
+  rowView.frame = frame;
+
+  [rowView configureLayout];
+
+  rowView.titleTextField.stringValue = [item.item.title ftg_trimmed];
+  rowView.subtitleTextField.stringValue = item.path;
+
+  return rowView;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+  return nil;
+}
+
+// MARK: - Textfield Delegate
+
+- (void)controlTextDidChange:(NSNotification *)notification {
+  NSTextField *textField = [notification object];
+
+  NSMutableArray *filteredItems = [NSMutableArray array];
+  for (FTGMenuItem *item in self.totalItems) {
+    if ([item.item.title ftg_contains:textField.stringValue]
+        || [textField.stringValue ftg_contains:item.item.title.ftg_trimmed]) {
+      [filteredItems addObject:item];
+    }
+  }
+
+  self.items = filteredItems;
+  [self.tableView reloadData];
+
+  [self updateWindowSize];
+}
+
+- (void)updateWindowSize {
+  CGFloat height = self.items.count * (self.tableView.rowHeight + 1) + topHeight;
+  height = MIN(height, windowHeight);
+  if (self.items.count > 0) {
+    height += 3;
+  }
+
+  CGRect rect = [NSApplication sharedApplication].modalWindow.frame;
+  CGFloat offset = height - rect.size.height;
+
+  rect.size.height += offset;
+  rect.origin.y -= offset;
+  [[NSApplication sharedApplication].modalWindow setFrame:rect display:YES];
+}
+
 // MARK: - Controls
 
 - (NSTextField *)makeTextField {
@@ -166,71 +229,8 @@
 
   view.wantsLayer = YES;
   view.layer.backgroundColor = [[NSColor grayColor] colorWithAlphaComponent:0.4].CGColor;
-
+  
   return view;
-}
-
-// MARK: - Table Data source
-
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-  return self.items.count;
-}
-
-// MARK: - Table Delegate
-
-- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
-  FTGRowView *rowView = [[FTGRowView alloc] init];
-  FTGMenuItem *item = self.items[row];
-
-  CGRect frame = rowView.frame;
-  frame.size.width = tableView.frame.size.width;
-  frame.size.height = tableView.rowHeight;
-  rowView.frame = frame;
-
-  [rowView configureLayout];
-
-  rowView.titleTextField.stringValue = [item.item.title ftg_trimmed];
-  rowView.subtitleTextField.stringValue = item.path;
-
-  return rowView;
-}
-
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  return nil;
-}
-
-// MARK: - Textfield Delegate
-
-- (void)controlTextDidChange:(NSNotification *)notification {
-  NSTextField *textField = [notification object];
-
-  NSMutableArray *filteredItems = [NSMutableArray array];
-  for (FTGMenuItem *item in self.totalItems) {
-    if ([item.item.title ftg_contains:textField.stringValue]
-        || [textField.stringValue ftg_contains:item.item.title.ftg_trimmed]) {
-      [filteredItems addObject:item];
-    }
-  }
-
-  self.items = filteredItems;
-  [self.tableView reloadData];
-
-  [self updateWindowSize];
-}
-
-- (void)updateWindowSize {
-  CGFloat height = self.items.count * (self.tableView.rowHeight + 1) + topHeight;
-  height = MIN(height, windowHeight);
-  if (self.items.count > 0) {
-    height += 3;
-  }
-
-  CGRect rect = [NSApplication sharedApplication].modalWindow.frame;
-  CGFloat offset = height - rect.size.height;
-
-  rect.size.height += offset;
-  rect.origin.y -= offset;
-  [[NSApplication sharedApplication].modalWindow setFrame:rect display:YES];
 }
 
 @end
