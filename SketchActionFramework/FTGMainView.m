@@ -205,18 +205,17 @@
 
 - (void)updateWindowSize {
   CGFloat height = self.items.count * self.tableView.rowHeight + topHeight;
-  height = MAX(height, topHeight);
   height = MIN(height, windowHeight);
   height += 22;
-
   if (self.items.count > 0) {
-    height += 3;
+    height += 5;
   }
 
   CGRect rect = [NSApplication sharedApplication].modalWindow.frame;
-  CGPoint origin = rect.origin;
-  rect.size.height = height;
-  rect.origin.y = origin.y;
+  CGFloat offset = height - rect.size.height;
+
+  rect.size.height += offset;
+  rect.origin.y -= offset;
   [[NSApplication sharedApplication].modalWindow setFrame:rect display:YES];
 }
 
