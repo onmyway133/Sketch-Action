@@ -220,7 +220,6 @@
 - (void)updateWindowSize {
   CGFloat height = self.items.count * (self.tableView.rowHeight + 1) + topHeight;
   height = MIN(height, windowHeight);
-  height += 22;
   if (self.items.count > 0) {
     height += 3;
   }

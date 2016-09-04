@@ -25,10 +25,27 @@
   return self;
 }
 
+- (BOOL)canBecomeKeyWindow {
+  return YES;
+}
+
+- (BOOL)canBecomeMainWindow {
+  return YES;
+}
+
+- (BOOL)becomeFirstResponder {
+  return YES;
+}
+
 // MARK: - Setup
 
 - (void)setup {
   self.mainView = [[FTGMainView alloc] init];
+
+  self.mainView.wantsLayer = YES;
+  self.mainView.layer.masksToBounds = YES;
+  self.mainView.layer.cornerRadius = 20;
+
   [self setContentView:self.mainView];
 }
 
