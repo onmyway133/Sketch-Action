@@ -13,6 +13,10 @@
 		D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2FD6FDA1D7B8C8600D01BFC /* FTGManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */; };
 		D2FD6FDC1D7C19AD00D01BFC /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */; };
+		D2FD70321D7C56D600D01BFC /* FTGMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70301D7C56D600D01BFC /* FTGMenuItem.h */; };
+		D2FD70331D7C56D600D01BFC /* FTGMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70311D7C56D600D01BFC /* FTGMenuItem.m */; };
+		D2FD70361D7C58C600D01BFC /* FTGRow.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FD70341D7C58C600D01BFC /* FTGRow.h */; };
+		D2FD70371D7C58C600D01BFC /* FTGRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FD70351D7C58C600D01BFC /* FTGRow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGManager.h; sourceTree = "<group>"; };
 		D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGManager.m; sourceTree = "<group>"; };
 		D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		D2FD70301D7C56D600D01BFC /* FTGMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGMenuItem.h; sourceTree = "<group>"; };
+		D2FD70311D7C56D600D01BFC /* FTGMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGMenuItem.m; sourceTree = "<group>"; };
+		D2FD70341D7C58C600D01BFC /* FTGRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTGRow.h; sourceTree = "<group>"; };
+		D2FD70351D7C58C600D01BFC /* FTGRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTGRow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,10 @@
 		D2FD6FB91D7B83AE00D01BFC = {
 			isa = PBXGroup;
 			children = (
+				D2FD70341D7C58C600D01BFC /* FTGRow.h */,
+				D2FD70351D7C58C600D01BFC /* FTGRow.m */,
+				D2FD70301D7C56D600D01BFC /* FTGMenuItem.h */,
+				D2FD70311D7C56D600D01BFC /* FTGMenuItem.m */,
 				D2FD6FDB1D7C19AD00D01BFC /* search@2x.png */,
 				D2FD6FD71D7B8C8600D01BFC /* FTGManager.h */,
 				D2FD6FD81D7B8C8600D01BFC /* FTGManager.m */,
@@ -74,9 +86,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FD70321D7C56D600D01BFC /* FTGMenuItem.h in Headers */,
 				D2FD6FD41D7B840000D01BFC /* FTGWindow.h in Headers */,
 				D2FD6FD91D7B8C8600D01BFC /* FTGManager.h in Headers */,
 				D2FD6FC71D7B83AE00D01BFC /* SketchActionFramework.h in Headers */,
+				D2FD70361D7C58C600D01BFC /* FTGRow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FD70371D7C58C600D01BFC /* FTGRow.m in Sources */,
 				D2FD6FD51D7B840000D01BFC /* FTGWindow.m in Sources */,
+				D2FD70331D7C56D600D01BFC /* FTGMenuItem.m in Sources */,
 				D2FD6FDA1D7B8C8600D01BFC /* FTGManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

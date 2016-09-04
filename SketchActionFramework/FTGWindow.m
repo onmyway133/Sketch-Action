@@ -7,6 +7,7 @@
 //
 
 #import "FTGWindow.h"
+#import "FTGMenuItem.h"
 
 @interface FTGWindow () <NSTableViewDataSource, NSTableViewDelegate, NSTextFieldDelegate>
 
@@ -18,7 +19,7 @@
 @property NSView *topView;
 @property NSColor *myColor;
 
-@property NSArray<NSMenuItem *> *items;
+@property NSMutableArray<FTGMenuItem *> *items;
 
 @end
 
@@ -28,6 +29,7 @@
   self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag];
 
   [self setup];
+  [self loadData];
 
   return self;
 }
@@ -71,7 +73,22 @@
 // MARK: - Data
 
 - (void)loadData {
+  self.items = [NSMutableArray array];
 
+  for (NSMenuItem *child in [NSApplication sharedApplication].mainMenu.itemArray) {
+    [self loadWithMenuItem:child];
+  }
+
+  [self.tableView reloadData];
+}
+
+- (void)loadWithMenuItem:(NSMenuItem *)item {
+  FTGMenuItem *ftgItem = [[FTGMenuItem alloc] initWithMenuItem:item];
+  [self.items addObject:ftgItem];
+
+  for (NSMenuItem *child in item.submenu.itemArray) {
+    [self loadWithMenuItem:child];
+  }
 }
 
 // MARK: - Controls
