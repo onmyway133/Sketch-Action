@@ -162,7 +162,7 @@
 
 - (void)cancelOperation:(id)sender {
   [self close];
-  
+  [[NSApplication sharedApplication] stopModal];
 }
 
 @end

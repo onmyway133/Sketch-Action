@@ -11,9 +11,8 @@
 
 @interface FTGManager : NSObject
 
-@property FTGWindow *window;
-
 + (instancetype)shared;
 - (void)say;
+- (FTGWindow *)makeWindow;
 
 @end

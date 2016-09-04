@@ -18,6 +18,8 @@ function loadFramework(pluginRoot) {
   }
 }
 
+var modalWindow = null
+
 function onRun(context) {
   var window = context.document.window
   var plugin = context.plugin
@@ -27,6 +29,6 @@ function onRun(context) {
   var manager = FTGManager.shared()
   manager.say()
 
-  var window = manager.window()
-  NSApplication.sharedApplication().runModalForWindow_(window)
+  modalWindow = manager.makeWindow()
+  NSApplication.sharedApplication().runModalForWindow_(modalWindow)
 }
