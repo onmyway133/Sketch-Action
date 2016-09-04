@@ -143,7 +143,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D2FD6FD61D7B8B4400D01BFC /* Copy Framework */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -151,9 +151,9 @@
 			name = "Copy Framework";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "cp -r DerivedData/SketchActionFramework/Build/Intermediates/ArchiveIntermediates/SketchActionFramework/BuildProductsPath/Release/SketchActionFramework.framework ../SketchAction.sketchplugin/Contents/Resources";
+			shellScript = "cp -r DerivedData/SketchActionFramework/Build/Products/Debug/SketchActionFramework.framework ../SketchAction.sketchplugin/Contents/Resources";
 		};
 /* End PBXShellScriptBuildPhase section */
 
