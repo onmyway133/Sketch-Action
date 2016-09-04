@@ -48,16 +48,16 @@
   self.scrollView = [self makeScrollView];
   self.topView = [self makeTopView];
 
-  self.topView.frame = NSMakeRect(0, windowHeight - topHeight, windowWidth, topHeight);
-  self.scrollView.frame = NSMakeRect(0, 0, windowWidth, windowHeight - topHeight);
+  self.topView.frame = NSMakeRect(0, 0, windowWidth, topHeight);
+  self.scrollView.frame = NSMakeRect(0, topHeight, windowWidth, windowHeight - topHeight);
   self.tableView.tableColumns.firstObject.width = self.scrollView.frame.size.width;
 
   // Top
   [self.topView addSubview:self.textField];
   [self.topView addSubview:self.imageView];
 
-  self.imageView.frame = NSMakeRect(5, topHeight - 39, 26, 26);
-  self.textField.frame = NSMakeRect(40, topHeight - 50, windowWidth - 55, 40);
+  self.imageView.frame = NSMakeRect(5, 12, 26, 26);
+  self.textField.frame = NSMakeRect(40, 2, windowWidth - 55, 40);
 
   // Table view
   self.scrollView.documentView = self.tableView;
