@@ -155,11 +155,8 @@
 }
 
 - (void)updateWindowSize {
-  CGFloat height = self.items.count * (self.tableView.rowHeight + 1) + topHeight;
+  CGFloat height = self.items.count * (self.tableView.rowHeight + 2) + topHeight;
   height = MIN(height, windowHeight);
-  if (self.items.count > 0) {
-    height += 3;
-  }
 
   CGRect rect = self.window.frame;
   CGFloat offset = height - rect.size.height;
