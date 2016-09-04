@@ -44,9 +44,13 @@
 
   self.mainView.wantsLayer = YES;
   self.mainView.layer.masksToBounds = YES;
-  self.mainView.layer.cornerRadius = 20;
+  self.mainView.layer.cornerRadius = 2;
+  self.mainView.layer.borderColor = [NSColor grayColor].CGColor;
+  self.mainView.layer.borderWidth = 1;
 
   [self setContentView:self.mainView];
+
+  self.backgroundColor = [NSColor clearColor];
 }
 
 // MARK: - Controls
