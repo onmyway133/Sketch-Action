@@ -199,6 +199,25 @@
 
   self.items = filteredItems;
   [self.tableView reloadData];
+
+  [self updateWindowSize];
+}
+
+- (void)updateWindowSize {
+  CGFloat height = self.items.count * self.tableView.rowHeight + topHeight;
+  height = MAX(height, topHeight);
+  height = MIN(height, windowHeight);
+  height += 22;
+
+  if (self.items.count > 0) {
+    height += 3;
+  }
+
+  CGRect rect = [NSApplication sharedApplication].modalWindow.frame;
+  CGPoint origin = rect.origin;
+  rect.size.height = height;
+  rect.origin.y = origin.y;
+  [[NSApplication sharedApplication].modalWindow setFrame:rect display:YES];
 }
 
 @end

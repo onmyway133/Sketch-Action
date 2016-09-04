@@ -32,7 +32,7 @@
 }
 
 - (FTGWindow *)makeWindow {
-  CGRect rect = NSMakeRect(0, 0, windowWidth, windowHeight);
+  CGRect rect = NSMakeRect(0, 0, windowWidth, topHeight);
   return [[FTGWindow alloc] initWithContentRect:rect styleMask:NSTitledWindowMask backing:NSBackingStoreBuffered defer:NO];
 }
 
