@@ -67,6 +67,8 @@
   // Window content view
   [self addSubview:self.topView];
   [self addSubview:self.scrollView];
+
+  [self.textField becomeFirstResponder];
 }
 
 // MARK: - Data
