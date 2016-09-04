@@ -14,4 +14,8 @@
   return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (BOOL)ftg_contains:(NSString *)string {
+  return [self rangeOfString:string options:NSCaseInsensitiveSearch].location != NSNotFound;
+}
+
 @end

@@ -11,5 +11,6 @@
 @interface NSString (Extensions)
 
 - (NSString *)ftg_trimmed;
+- (BOOL)ftg_contains:(NSString *)string;
 
 @end

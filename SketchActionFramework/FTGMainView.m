@@ -21,7 +21,8 @@
 @property NSView *topView;
 @property NSColor *myColor;
 
-@property NSMutableArray<FTGMenuItem *> *items;
+@property NSMutableArray<FTGMenuItem *> *totalItems;
+@property NSArray<FTGMenuItem *> *items;
 
 @end
 
@@ -74,7 +75,7 @@
 // MARK: - Data
 
 - (void)loadData {
-  self.items = [NSMutableArray array];
+  self.totalItems = [NSMutableArray array];
 
   for (NSMenuItem *child in [NSApplication sharedApplication].mainMenu.itemArray) {
     [self loadWithMenuItem:child];
@@ -87,7 +88,7 @@
   FTGMenuItem *ftgItem = [[FTGMenuItem alloc] initWithMenuItem:item];
 
   if (item.title.length != 0) {
-    [self.items addObject:ftgItem];
+    [self.totalItems addObject:ftgItem];
   }
 
   for (NSMenuItem *child in item.submenu.itemArray) {
@@ -187,6 +188,17 @@
 
 - (void)controlTextDidChange:(NSNotification *)notification {
   NSTextField *textField = [notification object];
+
+  NSMutableArray *filteredItems = [NSMutableArray array];
+  for (FTGMenuItem *item in self.totalItems) {
+    if ([item.item.title ftg_contains:textField.stringValue]
+        || [textField.stringValue ftg_contains:item.item.title.ftg_trimmed]) {
+      [filteredItems addObject:item];
+    }
+  }
+
+  self.items = filteredItems;
+  [self.tableView reloadData];
 }
 
 @end
