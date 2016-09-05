@@ -15,7 +15,7 @@ Spotlight in Sketch
 
 - Open via `Command + Control + o`
 - Close via `Escape`
-- Navigate via `Down, Up, Left, Right` arrow keys
+- Navigate via `Down, Up, Left, Right, Backspace` keys
 
 ## Install
 
