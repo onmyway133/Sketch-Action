@@ -124,7 +124,21 @@
   rowView.titleTextField.stringValue = [item.item.title ftg_trimmed];
   rowView.subtitleTextField.stringValue = item.path;
 
+  if (item.item.enabled) {
+    rowView.titleTextField.textColor = [NSColor blackColor];
+    rowView.subtitleTextField.textColor = [NSColor blackColor];
+  } else {
+    rowView.titleTextField.textColor = [NSColor grayColor];
+    rowView.subtitleTextField.textColor = [NSColor grayColor];
+  }
+
   return rowView;
+}
+
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row {
+  FTGMenuItem *item = self.items[row];
+
+  return item.item.enabled;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
