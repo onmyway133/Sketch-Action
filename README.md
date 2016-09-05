@@ -9,6 +9,7 @@ Spotlight in Sketch
 - [x] Find menu commands
 - [ ] Execute menu commands
 - [ ] Support other custom actions
+- [ ] Find layers
 
 ## Usage
 
