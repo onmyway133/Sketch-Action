@@ -38,10 +38,6 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
   return YES;
 }
 
-- (BOOL)canBecomeMainWindow {
-  return YES;
-}
-
 - (BOOL)becomeFirstResponder {
   return YES;
 }
