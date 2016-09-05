@@ -197,6 +197,7 @@
   if (!self.isTextFieldFirstResponder) {
     self.isTextFieldFirstResponder = YES;
     [self.textField becomeFirstResponder];
+    [self.textField.currentEditor moveToEndOfLine:nil];
   }
 }
 
