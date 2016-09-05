@@ -14,5 +14,6 @@
 - (void)handleKeyLeft;
 - (void)handleKeyRight;
 - (void)handleKeyEnter;
+- (void)handleKeyBackspace;
 
 @end

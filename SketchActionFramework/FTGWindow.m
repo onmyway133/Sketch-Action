@@ -14,7 +14,8 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
   FTGKeyRight = 124,
   FTGKeyDown = 125,
   FTGKeyUp = 126,
-  FTGKeyEnter = 36
+  FTGKeyEnter = 36,
+  FTGKeyBackspace = 51,
 };
 
 @interface FTGWindow ()
@@ -113,6 +114,8 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
       [self.mainView handleKeyEnter];
       [self closeAndStop];
       break;
+    case FTGKeyBackspace:
+      [self.mainView handleKeyBackspace];
     default:
       break;
   }

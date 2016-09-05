@@ -189,6 +189,10 @@
   }
 }
 
+- (void)handleKeyBackspace {
+  [self makeTextFieldFirstResponder];
+}
+
 - (void)makeTextFieldFirstResponder {
   if (!self.isTextFieldFirstResponder) {
     self.isTextFieldFirstResponder = YES;
