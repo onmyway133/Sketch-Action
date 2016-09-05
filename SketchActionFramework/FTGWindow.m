@@ -88,6 +88,10 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
 }
 
 - (void)closeAndStop {
+  if ([NSApplication sharedApplication].mainWindow.title.length == 0) {
+    return;
+  }
+  
   [self close];
   [[NSApplication sharedApplication] stopModal];
 }
@@ -107,7 +111,7 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
       break;
     case FTGKeyEnter:
       [self.mainView handleKeyEnter];
-//      [self closeAndStop];
+      [self closeAndStop];
       break;
     default:
       break;
