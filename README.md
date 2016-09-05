@@ -7,7 +7,7 @@ Spotlight in Sketch
 ## Idea
 
 - [x] Find menu commands
-- [ ] Execute menu commands
+- [x] Execute menu commands
 - [ ] Support other custom actions
 - [ ] Find layers
 
