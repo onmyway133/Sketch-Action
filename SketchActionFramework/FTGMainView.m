@@ -83,6 +83,7 @@
 - (void)loadData {
   self.totalItems = [NSMutableArray array];
 
+  [[NSApplication sharedApplication].mainMenu update];
   for (NSMenuItem *child in [NSApplication sharedApplication].mainMenu.itemArray) {
     [self loadWithMenuItem:child];
   }
@@ -91,6 +92,7 @@
 }
 
 - (void)loadWithMenuItem:(NSMenuItem *)item {
+  [item.menu update];
   FTGMenuItem *ftgItem = [[FTGMenuItem alloc] initWithMenuItem:item];
 
   if (item.title.length != 0) {
