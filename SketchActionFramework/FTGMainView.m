@@ -182,11 +182,12 @@
   [self makeTextFieldFirstResponder];
 }
 
-- (void)handleKeyEnter {
+- (FTGMenuItem *)findCurrentItem {
   if (self.tableView.selectedRow >=0 && self.tableView.selectedRow < self.items.count) {
-    FTGMenuItem *item = self.items[self.tableView.selectedRow];
-    [FTGHandler handle:item];
+    return self.items[self.tableView.selectedRow];
   }
+
+  return nil;
 }
 
 - (void)handleKeyBackspace {

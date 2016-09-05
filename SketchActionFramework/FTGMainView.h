@@ -7,13 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "FTGMenuItem.h"
 
 @interface FTGMainView : NSView
 
 - (void)handleKeyDown;
 - (void)handleKeyLeft;
 - (void)handleKeyRight;
-- (void)handleKeyEnter;
 - (void)handleKeyBackspace;
+- (FTGMenuItem *)findCurrentItem;
 
 @end

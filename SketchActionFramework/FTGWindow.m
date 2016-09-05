@@ -8,6 +8,8 @@
 
 #import "FTGWindow.h"
 #import "FTGMainView.h"
+#import "FTGMenuItem.h"
+#import "FTGHandler.h"
 
 typedef NS_ENUM(NSUInteger, FTGKey) {
   FTGKeyLeft = 123,
@@ -21,6 +23,7 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
 @interface FTGWindow ()
 
 @property FTGMainView *mainView;
+@property id monitor;
 
 @end
 
@@ -58,7 +61,7 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
   self.backgroundColor = [NSColor clearColor];
 
   __weak FTGWindow *weakSelf = self;
-  [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyUpMask handler:^NSEvent * _Nullable(NSEvent * _Nonnull event) {
+  self.monitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSKeyUpMask handler:^NSEvent * _Nullable(NSEvent * _Nonnull event) {
     FTGWindow *strongSelf = weakSelf;
     [strongSelf handleEvent:event];
 
@@ -85,10 +88,6 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
 }
 
 - (void)closeAndStop {
-  if ([NSApplication sharedApplication].mainWindow.title.length == 0) {
-    return;
-  }
-  
   [self close];
   [[NSApplication sharedApplication] stopModal];
 }
@@ -106,12 +105,18 @@ typedef NS_ENUM(NSUInteger, FTGKey) {
     case FTGKeyDown:
       [self.mainView handleKeyDown];
       break;
-    case FTGKeyEnter:
-      [self.mainView handleKeyEnter];
+    case FTGKeyEnter: {
+      FTGMenuItem *item = [self.mainView findCurrentItem];
       [self closeAndStop];
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [FTGHandler handle:item];
+      });
+      [NSEvent removeMonitor:self.monitor];
       break;
+    }
     case FTGKeyBackspace:
       [self.mainView handleKeyBackspace];
+      break;
     default:
       break;
   }
