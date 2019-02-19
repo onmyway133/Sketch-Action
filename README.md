@@ -2,6 +2,8 @@ Sketch-Action
 ==
 Spotlight in Sketch
 
+❤️ Support my work https://gum.co/TDvkh ❤️
+
 ![](Screenshots/sketch-action.gif)
 
 ## Idea
