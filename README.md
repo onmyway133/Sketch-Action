@@ -4,6 +4,8 @@
 
 Spotlight in Sketch
 
+![](Screenshots/sketch-action.gif)
+
 ## Idea
 
 - [x] Find menu commands
